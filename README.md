@@ -95,8 +95,3 @@ CREATE TABLE users (
     password VARCHAR(255),
     role VARCHAR(20)
 );
-
-perl
-
-
-Esse texto está pronto para ser inserido diretamente no arquivo README.md do seu projeto.
