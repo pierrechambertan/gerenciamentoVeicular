@@ -1,6 +1,6 @@
 package com.omnilink.veiculosclientesapi.domain.cliente;
 
-import com.omnilink.veiculosclientesapi.domain.veiculo.Veiculo;  // Importando a classe Veiculo
+import com.omnilink.veiculosclientesapi.domain.veiculo.Veiculo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

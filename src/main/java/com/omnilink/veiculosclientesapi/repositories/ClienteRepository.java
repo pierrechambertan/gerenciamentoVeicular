@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, String> {
-    // Métodos adicionais de consulta podem ser definidos aqui, se necessário
 }

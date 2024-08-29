@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(ClienteController.class)
-@WithMockUser(username = "admin", roles = {"USER"})  // Adicione esta linha para simular um usuário autenticado
+@WithMockUser(username = "admin", roles = {"USER"})
 public class ClienteControllerTest {
 
     @Autowired
