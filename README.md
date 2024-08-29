@@ -59,10 +59,4 @@ Endpoints
         Atualizar: PUT /veiculos/{placa}
         Deletar: DELETE /veiculos/{placa}
 
-Testes
 
-Execute os testes com:
-
-bash
-
-mvn test
