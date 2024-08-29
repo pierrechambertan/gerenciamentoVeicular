@@ -1,62 +1,97 @@
-markdown
+Está uma aplicação RESTful desenvolvida em Java 17 utilizando o Spring Boot, Hibernate e MySQL. Ela permite gerenciar informações de veículos e clientes, oferecendo operações de CRUD (Create, Read, Update, Delete) com segurança, validação de dados e cache. O sistema implementa autenticação e autorização utilizando JWT (JSON Web Tokens) para garantir a segurança dos endpoints.
+Tecnologias Utilizadas
 
+    Java 17: Linguagem de programação utilizada.
+    Spring Boot: Framework para desenvolvimento rápido de aplicações em Java.
+    Hibernate: ORM (Object-Relational Mapping) utilizado para mapeamento dos objetos Java para o banco de dados.
+    MySQL: Banco de dados relacional utilizado para armazenar as informações.
+    JWT: Utilizado para autenticação e autorização.
+    SLF4J e Logback: Utilizados para logging.
+    Swagger: Utilizado para documentação da API.
+    Ehcache: Utilizado para implementar cache na aplicação.
 
+Funcionalidades
 
-## Descrição
+    Gestão de Veículos:
+        Criação, leitura, atualização e exclusão de registros de veículos.
+        Validação de campos (placa, marca, modelo, ano).
+        Relacionamento com clientes.
 
-API REST para gerenciar veículos e clientes usando Java 17, Spring Boot, Hibernate, MySQL e autenticação JWT.
+    Gestão de Clientes:
+        Criação, leitura, atualização e exclusão de registros de clientes.
+        Validação de campos (CPF, nome, e-mail, telefone).
+        Relacionamento com veículos.
 
-## Configuração
+    Autenticação e Autorização:
+        Implementação de JWT para garantir a segurança dos endpoints.
+        Endpoints protegidos para operações CRUD.
 
-### Banco de Dados
+    Cache:
+        Implementado cache nas operações de busca para otimizar o desempenho.
 
-1. Crie o banco de dados MySQL:
-   ```sql
-   CREATE DATABASE veiculos_clientes_db;
+    Logging:
+        Logs estruturados para monitorar as operações da API.
 
-    Configure as credenciais no application.properties:
+    Documentação da API:
+        API documentada utilizando Swagger.
 
-    properties
+Requisitos de Instalação
 
-    spring.datasource.url=jdbc:mysql://localhost:3306/veiculos_clientes_db
-    spring.datasource.username=root
-    spring.datasource.password=Gawaluzia01!
+    Java 17 ou superior
+    Maven
+    MySQL
 
-Execução
+Configuração
 
     Clone o repositório:
 
     bash
 
-git clone https://github.com/pierrechambertan/Desafio_omni.git
-cd Desafio_omni
+git clone https://github.com/seu-usuario/veiculosclientesapi.git
+cd veiculosclientesapi
 
-Construa e execute o projeto:
+Configure o banco de dados no arquivo application.properties:
+
+properties
+
+spring.datasource.url=jdbc:mysql://localhost:3306/veiculos_clientes_db
+spring.datasource.username=root
+spring.datasource.password=SuaSenha
+
+Execute os scripts DDL para criar as tabelas no MySQL.
+
+Compile e execute a aplicação:
 
 bash
 
-    mvn clean install
-    mvn spring-boot:run
+mvn clean install
+mvn spring-boot:run
 
-Acesse a API em http://localhost:8080.
-Endpoints
+Acesse a documentação da API no Swagger:
 
-    Autenticação:
-        Registro: POST /auth/register
-        Login: POST /auth/login
+url
 
-    Clientes:
-        Criar: POST /clientes
-        Listar: GET /clientes
-        Obter por CPF: GET /clientes/{cpf}
-        Atualizar: PUT /clientes/{cpf}
-        Deletar: DELETE /clientes/{cpf}
+    http://localhost:8080/swagger-ui/index.html
 
-    Veículos:
-        Criar: POST /veiculos
-        Listar: GET /veiculos
-        Obter por Placa: GET /veiculos/{placa}
-        Atualizar: PUT /veiculos/{placa}
-        Deletar: DELETE /veiculos/{placa}
+Endpoints Principais
+Autenticação
 
+    POST /auth/register: Registro de novo usuário.
+    POST /auth/login: Autenticação do usuário e geração de token JWT.
+
+Clientes
+
+    GET /clientes: Lista todos os clientes.
+    GET /clientes/{cpf}: Busca cliente por CPF.
+    POST /clientes: Criação de novo cliente.
+    PUT /clientes/{cpf}: Atualização de cliente existente.
+    DELETE /clientes/{cpf}: Exclusão de cliente.
+
+Veículos
+
+    GET /veiculos: Lista todos os veículos.
+    GET /veiculos/{placa}: Busca veículo por placa.
+    POST /veiculos: Criação de novo veículo.
+    PUT /veiculos/{placa}: Atualização de veículo existente.
+    DELETE /veiculos/{placa}: Exclusão de veículo.
 
