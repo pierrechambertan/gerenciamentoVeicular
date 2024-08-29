@@ -1,18 +1,22 @@
-Descrição
+markdown
+
+
+
+## Descrição
 
 API REST para gerenciar veículos e clientes usando Java 17, Spring Boot, Hibernate, MySQL e autenticação JWT.
-Configuração
-Banco de Dados
 
-    Crie o banco de dados MySQL:
+## Configuração
 
-    sql
+### Banco de Dados
 
-CREATE DATABASE veiculos_clientes_db;
+1. Crie o banco de dados MySQL:
+   ```sql
+   CREATE DATABASE veiculos_clientes_db;
 
-Configure as credenciais no application.properties:
+    Configure as credenciais no application.properties:
 
-properties
+    properties
 
     spring.datasource.url=jdbc:mysql://localhost:3306/veiculos_clientes_db
     spring.datasource.username=root
@@ -92,4 +96,7 @@ CREATE TABLE users (
     role VARCHAR(20)
 );
 
-Este README fornece as informações essenciais para executar e testar a aplicação.
+perl
+
+
+Esse texto está pronto para ser inserido diretamente no arquivo README.md do seu projeto.
