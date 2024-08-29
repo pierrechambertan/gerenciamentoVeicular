@@ -1,5 +1,6 @@
 package com.omnilink.veiculosclientesapi.domain.veiculo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.omnilink.veiculosclientesapi.domain.cliente.Cliente;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -33,5 +34,6 @@ public class Veiculo {
 
     @ManyToOne
     @JoinColumn(name = "cpf_cliente", nullable = false)
+    @JsonIgnore
     private Cliente cliente;
 }
